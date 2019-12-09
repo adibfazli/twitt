@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hi</h1>
+        <p><%=weather.timezone%></p>
+        <p><%=weather.currently.temperature%></p>
+        <p><%=weather.currently.precipType%></p>
+        <p><%=weather.currently.summary%></p>
+
+        <%pst.forEach(e =>{%>
+            <img src="<%= e.user.avatar %>" width="50px" alt=""><a href="/profile/show/<%= e.user._id %>"><%= e.user.name %></a href="/profile">
+            <p><%= e.content %></p>
+        <%})%>
+
+        <form action="/post/add" method="POST">
+            <input type="text" name="content">
+            <button type="submit">add</button>
+        </form>
+</body>
+</html>
